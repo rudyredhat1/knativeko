@@ -1,0 +1,12 @@
+apiVersion: serving.knative.dev/v1alpha1 
+kind: Service
+metadata:
+  name: ko-example
+  namespace: default 
+spec:
+  runLatest:
+    configuration:
+      revisionTemplate:
+        spec:
+          container:
+            image: ko://github.com/google/ko/test
